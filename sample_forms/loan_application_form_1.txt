@@ -1,0 +1,62 @@
+LOAN APPLICATION FORM
+========================
+
+PERSONAL INFORMATION
+--------------------
+Full Name: Michael Rodriguez
+Email: michael.rodriguez@email.com
+Phone: +1-555-0123
+Address: 789 Pine Street, Austin, TX 78701
+Date of Birth: 1985-07-15
+SSN: 456-78-9012
+
+EMPLOYMENT INFORMATION
+----------------------
+Employment Status: Employed
+Employer: Austin Digital Solutions
+Job Title: Senior Software Engineer
+Annual Income: $95,000
+Employment Years: 6
+
+FINANCIAL INFORMATION
+---------------------
+Monthly Expenses: $3,500
+Existing Debt: $18,000
+Credit Score: 720
+Monthly Income: $7,916.67
+
+LOAN REQUEST
+------------
+Loan Purpose: Business Expansion
+Requested Amount: $100,000
+Loan Term: 7 years
+Collateral: Business Equipment
+
+BANK STATEMENT SUMMARY
+----------------------
+Account: ****5678
+Beginning Balance: $25,000.00
+Monthly Deposits: $7,916.67
+Monthly Withdrawals: $3,500.00
+Ending Balance: $29,416.67
+Average Balance: $27,208.33
+
+PAY STUB INFORMATION
+--------------------
+Pay Period: 12/01/2024 - 12/15/2024
+Gross Pay: $3,958.33
+Net Pay: $2,847.50
+YTD Gross: $95,000.00
+YTD Net: $68,400.00
+
+ADDITIONAL INFORMATION
+----------------------
+Previous Loans: 1 (Auto Loan - $18,000 remaining)
+Bankruptcy: None
+Foreclosure: None
+Co-signer: None
+
+SIGNATURE
+---------
+Michael Rodriguez
+Date: 2024-12-26

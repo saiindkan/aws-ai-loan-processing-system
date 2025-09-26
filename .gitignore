@@ -1,0 +1,103 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# AWS
+.aws/
+aws-credentials
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+/tmp/
+
+# Lambda deployment packages
+*.zip
+backend/lambda_functions/*/deployment_package.zip
+
+# AWS SDK dependencies (too large for git)
+backend/lambda_functions/*/boto3/
+backend/lambda_functions/*/botocore/
+backend/lambda_functions/*/dateutil/
+backend/lambda_functions/*/jmespath/
+backend/lambda_functions/*/s3transfer/
+backend/lambda_functions/*/six.py
+backend/lambda_functions/*/urllib3/
+backend/lambda_functions/*/*.dist-info/
+
+# Nested backend directory
+backend/backend/
+
+# PDF files
+*.pdf
+
+# Test files
+test_*.json
+response*.json
+*_sample_*.json
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+frontend/

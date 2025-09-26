@@ -1,0 +1,62 @@
+LOAN APPLICATION FORM
+========================
+
+PERSONAL INFORMATION
+--------------------
+Full Name: Emily Chen
+Email: emily.chen@email.com
+Phone: +1-555-0456
+Address: 321 Maple Avenue, Seattle, WA 98101
+Date of Birth: 1992-11-08
+SSN: 789-01-2345
+
+EMPLOYMENT INFORMATION
+----------------------
+Employment Status: Employed
+Employer: Seattle Tech Innovations
+Job Title: Product Manager
+Annual Income: $110,000
+Employment Years: 4
+
+FINANCIAL INFORMATION
+---------------------
+Monthly Expenses: $4,200
+Existing Debt: $25,000
+Credit Score: 760
+Monthly Income: $9,166.67
+
+LOAN REQUEST
+------------
+Loan Purpose: Home Purchase
+Requested Amount: $250,000
+Loan Term: 30 years
+Collateral: Property
+
+BANK STATEMENT SUMMARY
+----------------------
+Account: ****9012
+Beginning Balance: $45,000.00
+Monthly Deposits: $9,166.67
+Monthly Withdrawals: $4,200.00
+Ending Balance: $49,966.67
+Average Balance: $47,483.33
+
+PAY STUB INFORMATION
+--------------------
+Pay Period: 12/01/2024 - 12/15/2024
+Gross Pay: $4,583.33
+Net Pay: $3,299.17
+YTD Gross: $110,000.00
+YTD Net: $79,200.00
+
+ADDITIONAL INFORMATION
+----------------------
+Previous Loans: 2 (Student Loan - $25,000 remaining)
+Bankruptcy: None
+Foreclosure: None
+Co-signer: None
+
+SIGNATURE
+---------
+Emily Chen
+Date: 2024-12-26

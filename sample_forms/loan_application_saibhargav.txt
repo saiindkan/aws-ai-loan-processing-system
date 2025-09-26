@@ -1,0 +1,62 @@
+LOAN APPLICATION FORM
+========================
+
+PERSONAL INFORMATION
+--------------------
+Full Name: Sai Bhargav
+Email: saibhargav@email.com
+Phone: +1-555-0123
+Address: 123 Tech Street, San Francisco, CA 94105
+Date of Birth: 1990-05-15
+SSN: 123-45-6789
+
+EMPLOYMENT INFORMATION
+----------------------
+Employment Status: Employed
+Employer: AI Tech Solutions
+Job Title: Senior AI Engineer
+Annual Income: $120,000
+Employment Years: 8
+
+FINANCIAL INFORMATION
+---------------------
+Monthly Expenses: $4,500
+Existing Debt: $22,000
+Credit Score: 780
+Monthly Income: $10,000
+
+LOAN REQUEST
+------------
+Loan Purpose: Home Purchase
+Requested Amount: $400,000
+Loan Term: 30 years
+Collateral: Property
+
+BANK STATEMENT SUMMARY
+----------------------
+Account: ****1234
+Beginning Balance: $35,000.00
+Monthly Deposits: $10,000.00
+Monthly Withdrawals: $4,500.00
+Ending Balance: $40,500.00
+Average Balance: $37,750.00
+
+PAY STUB INFORMATION
+--------------------
+Pay Period: 12/01/2024 - 12/15/2024
+Gross Pay: $5,000.00
+Net Pay: $3,600.00
+YTD Gross: $120,000.00
+YTD Net: $86,400.00
+
+ADDITIONAL INFORMATION
+----------------------
+Previous Loans: 1 (Student Loan - $22,000 remaining)
+Bankruptcy: None
+Foreclosure: None
+Co-signer: None
+
+SIGNATURE
+---------
+Sai Bhargav
+Date: 2024-12-26

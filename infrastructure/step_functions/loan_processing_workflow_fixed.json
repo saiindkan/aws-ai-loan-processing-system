@@ -1,0 +1,139 @@
+{
+  "Comment": "AI-Powered Loan Processing Workflow",
+  "StartAt": "ValidateInput",
+  "States": {
+    "ValidateInput": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.applicant_data",
+          "IsPresent": true,
+          "Next": "ProcessDocuments"
+        }
+      ],
+      "Default": "FailValidation"
+    },
+    "FailValidation": {
+      "Type": "Fail",
+      "Cause": "Missing applicant data",
+      "Error": "ValidationError"
+    },
+    "ProcessDocuments": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "document-processing-agent",
+        "Payload.$": "$"
+      },
+      "ResultPath": "$.document_results",
+      "Next": "AssessRisk",
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "HandleDocumentError",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "HandleDocumentError": {
+      "Type": "Pass",
+      "Result": {
+        "Payload": {
+          "body": "{\"extracted_data\": {}}"
+        }
+      },
+      "ResultPath": "$.document_results",
+      "Next": "AssessRisk"
+    },
+    "AssessRisk": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "risk-assessment-agent",
+        "Payload": {
+          "applicant_data.$": "$.applicant_data",
+          "applicant_id.$": "$.applicant_id",
+          "extracted_data.$": "$.document_results.Payload.body"
+        }
+      },
+      "ResultPath": "$.risk_results",
+      "Next": "MakeDecision",
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "HandleRiskError",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "HandleRiskError": {
+      "Type": "Pass",
+      "Result": {
+        "Payload": {
+          "body": "{\"risk_assessment\": {\"overall_risk_score\": 0.5, \"credit_risk_score\": 0.5, \"fraud_risk_score\": 0.0, \"credit_risk_level\": \"MEDIUM\", \"fraud_risk_level\": \"MEDIUM\"}}"
+        }
+      },
+      "ResultPath": "$.risk_results",
+      "Next": "MakeDecision"
+    },
+    "MakeDecision": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "decision-making-agent",
+        "Payload": {
+          "applicant_data.$": "$.applicant_data",
+          "applicant_id.$": "$.applicant_id",
+          "risk_assessment.$": "$.risk_results.Payload.body"
+        }
+      },
+      "ResultPath": "$.decision_results",
+      "Next": "Success",
+      "Retry": [
+        {
+          "ErrorEquals": ["Lambda.ServiceException", "Lambda.AWSLambdaException", "Lambda.SdkClientException"],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 3,
+          "BackoffRate": 2.0
+        }
+      ],
+      "Catch": [
+        {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "HandleDecisionError",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "HandleDecisionError": {
+      "Type": "Pass",
+      "Result": {
+        "Payload": {
+          "body": "{\"decision\": \"PENDING\", \"decision_reason\": \"SYSTEM_ERROR\", \"decision_rationale\": \"System error occurred during decision making\"}"
+        }
+      },
+      "ResultPath": "$.decision_results",
+      "Next": "Success"
+    },
+    "Success": {
+      "Type": "Succeed",
+      "OutputPath": "$"
+    }
+  }
+}
