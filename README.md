@@ -48,15 +48,17 @@ This is a comprehensive AI-powered loan processing system built on AWS services.
 - AWS CLI installed and configured
 - Python 3.9+ installed
 
-### Setup
+### Setup (run as-is with sample forms)
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
    cd aws-ai-loan-system
    ```
 
-2. **Install dependencies**
+2. **Install dependencies** (use a lightweight venv)
    ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
    pip install -r requirements.txt
    ```
 
@@ -65,15 +67,21 @@ This is a comprehensive AI-powered loan processing system built on AWS services.
    aws configure
    ```
 
-4. **Deploy infrastructure**
+4. **Deploy infrastructure** (one-time)
    ```bash
    python3 setup_infrastructure.py
    ```
 
-5. **Test the system**
+5. **Test the system (automatic end-to-end demo)**
    ```bash
-   python3 test_manual_workflow.py
+   python3 upload_to_s3_and_trigger.py
    ```
+
+This will:
+- Upload two sample forms to S3 (`loan_application_form_1.txt`, `loan_application_form_2.txt`)
+- Trigger the Step Functions workflow
+- Run Lambda-based document/risk/decision agents
+- Print final decision output and check DynamoDB
 
 ## 🧪 **Testing**
 
